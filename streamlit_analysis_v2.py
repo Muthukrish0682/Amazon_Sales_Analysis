@@ -197,9 +197,9 @@ st.header("High Sales Performance")
 st.subheader("Top Performers:")
 st.write(
     """
-    - **Prada (€24,965.33)**
-    - **Valentino (€41,021.50)**
-    - **BVLGARI (€53,700.50)**
+    - **Prada (24,965.33)**
+    - **Valentino (41,021.50)**
+    - **BVLGARI (53,700.50)**
 
     **Insight:** These brands have the lowest average sales ranks, indicating strong sales performance over the past 90 days. They are positioned as top performers in their respective markets, achieving high visibility and customer engagement.
 
@@ -213,9 +213,9 @@ st.header("Mid-Range Sales Performance")
 st.subheader("Competitive Sales Ranks:")
 st.write(
     """
-    - **Tiffany (€69,457.00)**
-    - **GIORGIO ARMANI (€75,474.50)**
-    - **Guerlain (€76,867.50)**
+    - **Tiffany (69,457)**
+    - **GIORGIO ARMANI (75,474)**
+    - **Guerlain (76,867)**
 
     **Insight:** These brands have moderate average sales ranks, reflecting competitive performance. They are performing well but may face more competition compared to the top performers.
 
@@ -229,10 +229,10 @@ st.header("Lower Sales Performance")
 st.subheader("Areas for Improvement:")
 st.write(
     """
-    - **Tom Ford (€86,000.20)**
-    - **Versace (€87,774.50)**
-    - **PETZL (€97,427.50)**
-    - **Carolina Herrera (€107,276.00)**
+    - **Tom Ford (86,000.20)**
+    - **Versace (87,774.50)**
+    - **PETZL (97,427.50)**
+    - **Carolina Herrera (107,276.00)**
 
     **Insight:** These brands have higher average sales ranks, indicating weaker sales performance compared to others. They may be facing challenges in maintaining visibility or engaging customers effectively.
 
