@@ -2,8 +2,11 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# combined_pricing_v1.csv
+
 # Load your data
 df = pd.read_csv(r"fragance_it_keepa.csv")
+df1 = pd.read_csv(r"combined_pricing_v1.csv")
 df.columns = [col.replace("🚚", "").strip() for col in df.columns]
 
 # Add Introduction
@@ -22,6 +25,7 @@ st.sidebar.markdown("""
 - **[Statistical Summary](#statistical-summary)**
 - **[Price Drop Analysis](#price-drop-analysis)**
 - **[Category Insights](#category-insights)**
+- **[Customer Reviews](#customer-reviews)**
 - **[Contact](#contact)**
 """)
 
@@ -197,9 +201,9 @@ st.header("High Sales Performance")
 st.subheader("Top Performers:")
 st.write(
     """
-    - **Prada (24,965.33)**
-    - **Valentino (41,021.50)**
-    - **BVLGARI (53,700.50)**
+    - **Prada (€24,965.33)**
+    - **Valentino (€41,021.50)**
+    - **BVLGARI (€53,700.50)**
 
     **Insight:** These brands have the lowest average sales ranks, indicating strong sales performance over the past 90 days. They are positioned as top performers in their respective markets, achieving high visibility and customer engagement.
 
@@ -213,9 +217,9 @@ st.header("Mid-Range Sales Performance")
 st.subheader("Competitive Sales Ranks:")
 st.write(
     """
-    - **Tiffany (69,457)**
-    - **GIORGIO ARMANI (75,474)**
-    - **Guerlain (76,867)**
+    - **Tiffany (€69,457.00)**
+    - **GIORGIO ARMANI (€75,474.50)**
+    - **Guerlain (€76,867.50)**
 
     **Insight:** These brands have moderate average sales ranks, reflecting competitive performance. They are performing well but may face more competition compared to the top performers.
 
@@ -229,10 +233,10 @@ st.header("Lower Sales Performance")
 st.subheader("Areas for Improvement:")
 st.write(
     """
-    - **Tom Ford (86,000.20)**
-    - **Versace (87,774.50)**
-    - **PETZL (97,427.50)**
-    - **Carolina Herrera (107,276.00)**
+    - **Tom Ford (€86,000.20)**
+    - **Versace (€87,774.50)**
+    - **PETZL (€97,427.50)**
+    - **Carolina Herrera (€107,276.00)**
 
     **Insight:** These brands have higher average sales ranks, indicating weaker sales performance compared to others. They may be facing challenges in maintaining visibility or engaging customers effectively.
 
@@ -578,14 +582,264 @@ for category, details in insights.items():
         st.write(f"**Actionable Strategy:** {info['Actionable Strategy']}")
         st.write("")  # Add a blank line for readability
 
-st.subheader('Summary')
-st.write(
-    """
-    - **Focus on High Performers**: Prioritize marketing and inventory strategies for categories with high sales ranks (Casa e Cucina and Giochi e Giocattoli) to maximize revenue.
-    - **Enhance Moderate Categories**: Develop strategies to increase sales in moderate-performing categories (Moda, Bellezza, Salute e Cura della Persona, and Sport e Tempo Libero).
-    - **Revise Low Performers**: Investigate and address the reasons for zero sales in Alimentari e Cura della Casa and Cancelleria e Prodotti per Ufficio. Adjust strategies to improve performance in these categories.
-    """
+
+# Customer Reviews
+st.markdown("<a id='customer-reviews'></a><h2>6. Customer Reviews and Price Impact</h2>", unsafe_allow_html=True)
+# st.write("Content for Customer Reviews and Price Impact Analysis goes here.")
+# Customer Reviews Analysis
+# st.title('Customer reviews Analysis and Price Impact Analysis')
+
+# Header
+st.header('Product Price Analysis by Rating')
+
+# Ensure price and rating columns are cleaned and converted to numeric
+df1['price'] = df1['price'].astype(str).str.replace('[€,$,]', '', regex=True).replace('nan', pd.NA)
+df1['rating'] = pd.to_numeric(df1['rating'], errors='coerce')
+df1['price'] = pd.to_numeric(df1['price'], errors='coerce')
+
+# Plotting
+price_distribution_by_rating = px.box(
+    df1,
+    x='rating',
+    y='price',
+    title='Price Distribution by Rating',
+    labels={'price': 'Price (€)', 'rating': 'Rating'}
 )
+
+# Increase figure size for better readability
+price_distribution_by_rating.update_layout(
+    width=1000,  # Width in pixels
+    height=600   # Height in pixels
+)
+
+# Display the plot in Streamlit
+st.plotly_chart(price_distribution_by_rating)
+
+# Detailed Breakdown
+st.header('Detailed Breakdown:')
+
+# Rating 3.5
+st.subheader('Rating 3.5:')
+st.markdown("""
+- **Count**: 45 products
+- **Mean Price**: $58.99
+- **Median Price**: $56.90
+- **Standard Deviation**: $13.84
+- **Min Price**: $34.50
+- **Max Price**: $90.99
+- **Q1 (25th Percentile)**: $49.20
+- **Q3 (75th Percentile)**: $66.60
+
+**Interpretation**: Products with a rating of 3.5 are less expensive with a narrower price range and lower variability compared to higher ratings.
+""")
+
+# Rating 4.0
+st.subheader('Rating 4.0:')
+st.markdown("""
+- **Count**: 433 products
+- **Mean Price**: $74.81
+- **Median Price**: $47.90
+- **Standard Deviation**: $62.75
+- **Min Price**: $11.85
+- **Max Price**: $386.37
+- **Q1 (25th Percentile)**: $38.40
+- **Q3 (75th Percentile)**: $85.99
+
+**Interpretation**: For a rating of 4.0, prices have a wide range and high variability. The median is lower, indicating a significant number of lower-priced products despite the higher mean price.
+""")
+
+# Rating 4.5
+st.subheader('Rating 4.5:')
+st.markdown("""
+- **Count**: 32,659 products
+- **Mean Price**: $81.68
+- **Median Price**: $71.00
+- **Standard Deviation**: $53.12
+- **Min Price**: $0.90
+- **Max Price**: $1076.14
+- **Q1 (25th Percentile)**: $48.40
+- **Q3 (75th Percentile)**: $99.46
+
+**Interpretation**: Products with a rating of 4.5 are the most numerous and have a broad price range. The median and quartiles are high, indicating a shift to higher prices, with significant variability.
+""")
+
+# Rating 5.0
+st.subheader('Rating 5.0:')
+st.markdown("""
+- **Count**: 8,440 products
+- **Mean Price**: $98.58
+- **Median Price**: $79.51
+- **Standard Deviation**: $74.14
+- **Min Price**: $8.93
+- **Max Price**: $907.50
+- **Q1 (25th Percentile)**: $54.05
+- **Q3 (75th Percentile)**: $114.99
+
+**Interpretation**: Products with a perfect rating of 5.0 have the highest mean and median prices. The price range is extensive with the highest variability, showing that while these products are expensive on average, there is considerable variability in prices.
+""")
+
+# Summary
+st.header('Summary:')
+st.markdown("""
+- **Higher Ratings**: Generally correspond with higher average and median prices, with a wider range and increased variability.
+- **Price Range**: Expands with higher ratings, indicating that high-rated products can vary significantly in price.
+- **Quartiles**: Both the first and third quartiles increase with ratings, indicating that higher-rated products are more likely to have higher prices.
+""")
+
+
+# Calculate the correlation between price and rating
+correlation_price_rating = df1['price'].corr(df1['rating'])
+
+# Display the results
+st.title('Correlation Analysis')
+
+# Display Correlation Result
+st.write("Correlation Between Price and Rating:", correlation_price_rating)
+
+# Display Interpretation
+st.markdown("""
+### Interpretation:
+
+0.117 indicates a weak positive correlation between price and rating. This means that as the price increases, the rating tends to slightly increase as well. However, since the value is close to 0, the relationship is very weak and might not be practically significant. In other words, price does not have a strong impact on the ratings of the products in your dataset.
+""")
+
+
+
+# Calculate the correlation between the number of reviews and rating
+correlation_reviews_rating = df1['number_of_reviews'].corr(df1['rating'])
+
+# Display the results
+# st.title('Correlation Analysis')
+
+# Display Correlation Result
+st.write("Correlation Between Number of Reviews and Rating:", correlation_reviews_rating)
+
+# Display Interpretation
+st.markdown("""
+### Interpretation:
+
+-0.128 indicates a weak negative correlation between the number of reviews and rating. This means that as the number of reviews increases, the rating tends to slightly decrease. Again, since the value is close to 0, this relationship is very weak and might not be practically significant. This suggests that the number of reviews is not strongly related to the ratings, but there is a slight tendency for products with more reviews to have slightly lower ratings.
+""")
+
+st.header('Source Analysis')
+
+st.write(
+    "The source of the data represents the website or platform from which the data was collected. "
+    "Here, `es` stands for Spanish and `fr` stands for French."
+)
+
+# Calculate price variation by source
+price_variation_by_source = px.box(
+    df1,
+    x='source',
+    y='price',
+    title='Price Variation by Source',
+    labels={'price': 'Price ($)', 'source': 'Source'}
+)
+
+# Streamlit title and plot
+st.header('Price Variation Analysis Across Different Sources')
+st.plotly_chart(price_variation_by_source)
+
+# Interpretation
+st.markdown("""
+### Interpretation:
+
+#### 1. Average Price:
+- **es**: The average price of products from the es source is $80.44.
+- **fr**: The average price of products from the fr source is higher at $90.28.
+
+**Implication:** On average, products from the fr source are more expensive than those from the es source.
+
+#### 2. Minimum Price:
+- **es**: The minimum price of a product from the es source is $6.34.
+- **fr**: The minimum price of a product from the fr source is significantly lower at $0.90.
+
+**Implication:** The fr source offers some products at very low prices, indicating a wider range of product prices compared to the es source.
+
+#### 3. Maximum Price:
+- **es**: The maximum price of a product from the es source is $1065.86.
+- **fr**: The maximum price of a product from the fr source is slightly higher at $1076.14.
+
+**Implication:** Both sources offer high-priced items, but the fr source has a slightly higher maximum price, reinforcing the observation that fr has a broader price range.
+
+#### 4. Average Rating:
+- **es**: The average rating of products from the es source is 4.594725.
+- **fr**: The average rating of products from the fr source is very close, at 4.595767.
+
+**Implication:** Both sources have very high average ratings, indicating that customers are generally very satisfied with products from both sources. The difference in average ratings is negligible.
+
+#### 5. Total Number of Reviews:
+- **es**: Products from the es source have a total of 69,282,983 reviews.
+- **fr**: Products from the fr source have a total of 61,063,745 reviews.
+
+**Implication:** The es source has received more reviews overall compared to the fr source. This could indicate higher sales volume or a larger customer base for the es source.
+
+### Overall Implications:
+- **Pricing:** The fr source has a broader price range, offering both very low-priced and high-priced products, while the es source has a narrower range with slightly lower average prices.
+- **Customer Satisfaction:** Both sources have very high and similar average ratings, suggesting high customer satisfaction across the board.
+- **Review Volume:** The es source has a higher total number of reviews, which might reflect higher engagement or a larger market presence compared to the fr source.
+""")
+
+# Calculate rating comparison by source
+rating_comparison_by_source = px.box(
+    df1,
+    x='source',
+    y='rating',
+    title='Rating Comparison by Source',
+    labels={'rating': 'Rating', 'source': 'Source'}
+)
+
+# Streamlit title and plot
+st.header('Rating Comparison Analysis Across Different Sources')
+st.plotly_chart(rating_comparison_by_source)
+
+# Interpretation
+st.markdown("""
+### Interpretation:
+
+#### 1. Average Rating:
+- **es**: The average rating of products from the es source is 4.594725.
+- **fr**: The average rating of products from the fr source is slightly higher at 4.595767.
+
+**Implication:** Both sources have very high average ratings, indicating that customers are generally very satisfied with products from both sources. The difference in average ratings is negligible.
+
+#### 2. Minimum Rating:
+- **es**: The minimum rating of a product from the es source is 3.5.
+- **fr**: The minimum rating of a product from the fr source is also 3.5.
+
+**Implication:** Both sources have products that are rated at least 3.5, which indicates a relatively high baseline for product quality.
+
+#### 3. Maximum Rating:
+- **es**: The maximum rating of a product from the es source is 5.0.
+- **fr**: The maximum rating of a product from the fr source is also 5.0.
+
+**Implication:** Both sources have products that are rated the highest possible rating of 5.0, indicating top-rated products are present in both sources.
+
+#### 4. Standard Deviation of Ratings:
+- **es**: The standard deviation of ratings for the es source is 0.211010.
+- **fr**: The standard deviation of ratings for the fr source is slightly higher at 0.215286.
+
+**Implication:** The standard deviation measures the amount of variation or dispersion in the ratings. Both sources have low standard deviations, suggesting that the ratings are tightly clustered around the average. The slightly higher standard deviation for the fr source indicates a marginally wider spread in ratings, but the difference is minimal.
+
+### Overall Implications:
+- **Customer Satisfaction:** Both sources have very high average ratings, indicating strong customer satisfaction. The difference in average ratings is negligible, suggesting similar levels of customer satisfaction for products from both sources.
+- **Rating Consistency:** The minimum and maximum ratings are the same for both sources, indicating that the range of product ratings is similar. The low standard deviations indicate that most products are rated close to the average, with the fr source having a slightly wider variation in ratings.
+- **Quality Assurance:** Products from both sources maintain a high standard, with all products rated at least 3.5 and some achieving the perfect rating of 5.0. The consistency in high ratings reflects positively on the quality and reliability of products offered by both sources.
+""")
+
+
+
+
+
+# st.subheader('Overall Summary')
+# st.write(
+#     """
+#     - **Focus on High Performers**: Prioritize marketing and inventory strategies for categories with high sales ranks (Casa e Cucina and Giochi e Giocattoli) to maximize revenue.
+#     - **Enhance Moderate Categories**: Develop strategies to increase sales in moderate-performing categories (Moda, Bellezza, Salute e Cura della Persona, and Sport e Tempo Libero).
+#     - **Revise Low Performers**: Investigate and address the reasons for zero sales in Alimentari e Cura della Casa and Cancelleria e Prodotti per Ufficio. Adjust strategies to improve performance in these categories.
+#     """
+# )
 
 
 # Contact
