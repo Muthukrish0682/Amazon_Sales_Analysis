@@ -82,101 +82,68 @@ else:
                  labels={'Average Current Buy Box Price': 'Average Current Buy Box Price (€)'})
     st.plotly_chart(fig, use_container_width=True)
 
-# Title
-st.title("Current Buy Box Price Insights")
-
 # Premium and Luxury Branding
-st.header("Premium and Luxury Branding")
-
-st.subheader("High-End Luxury Pricing:")
+st.subheader("Premium and Luxury Branding")
 st.write(
-    """
-    - **La Mer (€239.43)**
-    - **Penhaligon's (€212.29)**
-    - **La Prairie (€144.00)**
-
-    **Insight:** These brands have the highest average Buy Box prices, indicating a strong premium positioning. They cater to high-value customers seeking luxury and exclusivity.
-
-    **Actionable Strategy:** Maintain premium pricing to reinforce brand prestige. Consider exclusive offers or limited editions to further enhance brand value.
-    """
+    "**Brands:** La Mer (€239.43), Penhaligon's (€212.29), La Prairie (€144.00)"
+)
+st.write(
+    "**Insight:** These brands have the highest average prices, indicating a strong premium market position. "
+    "They cater to customers seeking luxury and exclusivity."
+)
+st.write(
+    "**Strategy:** Maintain premium pricing to reinforce brand prestige. Consider exclusive promotions or limited editions to enhance their luxury appeal."
 )
 
 # Competitive Mid-Range Pricing
-st.header("Competitive Mid-Range Pricing")
-
-st.subheader("Competitive Pricing Strategies:")
+st.subheader("Competitive Mid-Range Pricing")
 st.write(
-    """
-    - **Loewe (€96.51)**
-    - **Tom Ford (€90.83)**
-    - **Helena Rubinstein (€85.90)**
-    - **Guerlain (€74.91)**
-
-    **Insight:** These brands fall into the mid-range pricing segment. They balance between premium and accessible pricing, positioning themselves competitively in the market.
-
-    **Actionable Strategy:** Use competitive pricing to attract a broader customer base. Focus on offering value through quality and brand experience to differentiate from higher-priced competitors.
-    """
+    "**Brands:** Loewe (€96.51), Tom Ford (€90.83), Helena Rubinstein (€85.90), Guerlain (€74.91)"
+)
+st.write(
+    "**Insight:** These brands are priced in the mid-range, balancing premium features with accessibility. They attract a wide customer base by offering a mix of quality and value."
+)
+st.write(
+    "**Strategy:** Utilize competitive pricing to appeal to a broad audience. Differentiate through superior product quality and brand experience."
 )
 
 # Value-Oriented Pricing
-st.header("Value-Oriented Pricing")
-
-st.subheader("Value Positioning:")
+st.subheader("Value-Oriented Pricing")
 st.write(
-    """
-    - **BVLGARI (€72.70)**
-    - **Chanel (€65.90)**
-    - **Tiffany (€63.70)**
-
-    **Insight:** These brands are priced lower compared to the high-end segment but are still positioned as premium or aspirational. They target consumers looking for value within the higher-end market.
-
-    **Actionable Strategy:** Emphasize quality and heritage in marketing to attract customers who desire premium features at a more accessible price point. Regularly review pricing to ensure it remains competitive within the market segment.
-    """
+    "**Brands:** BVLGARI (€72.70), Chanel (€65.90), Tiffany (€63.70)"
+)
+st.write(
+    "**Insight:** Positioned as value-oriented but still aspirational, these brands offer quality at more accessible prices. They target consumers looking for premium features without the highest price tag."
+)
+st.write(
+    "**Strategy:** Highlight the quality and heritage of these brands in marketing. Ensure pricing reflects the value proposition and remains competitive in the market."
 )
 
 # Price Range Dynamics
-st.header("Price Range Dynamics")
-
-st.subheader("Wide Pricing Variability:")
+st.subheader("Price Range Dynamics")
 st.write(
-    """
-    **High to Low Range:** Prices vary significantly from €63.70 (Tiffany) to €239.43 (La Mer).
-
-    **Insight:** The substantial price range reflects diverse market segments and varying customer bases. This variability highlights the need for differentiated strategies to cater to different segments effectively.
-
-    **Actionable Strategy:** Adjust pricing strategies based on market positioning. For high-priced brands, focus on exclusivity and luxury. For lower-priced brands, emphasize value and accessibility.
-    """
+    "**Range:** €63.70 (Tiffany) to €239.43 (La Mer)"
+)
+st.write(
+    "**Insight:** The broad price range reflects a diverse market with varying customer segments. High-priced brands cater to luxury consumers, while lower-priced brands appeal to those seeking value."
+)
+st.write(
+    "**Strategy:** Develop tailored pricing strategies for different segments. Focus on exclusivity for higher-priced brands and emphasize value for more accessible options."
 )
 
-# Pricing Strategy Recommendations
-st.header("Pricing Strategy Recommendations")
-
-st.subheader("Leverage Premium Pricing:")
+# Summary
+st.subheader("Summary")
 st.write(
-    """
-    For high-end brands like La Mer and Penhaligon's, maintain premium pricing to reinforce their luxury positioning. Consider exclusive promotions or collaborations to enhance their appeal.
-    """
+    "1. **Premium Brands:** Reinforce luxury positioning with high prices and exclusive offers."
 )
-
-st.subheader("Optimize Mid-Range Pricing:")
 st.write(
-    """
-    For brands like Loewe and Tom Ford, continue competitive pricing strategies to attract mid-range customers. Focus on differentiating through product quality and brand experience.
-    """
+    "2. **Mid-Range Brands:** Attract a wider audience with competitive pricing and high quality."
 )
-
-st.subheader("Enhance Value Positioning:")
 st.write(
-    """
-    For brands like BVLGARI and Chanel, ensure that pricing reflects the brand's value proposition. Emphasize the quality and aspirational aspects of these brands to attract value-conscious consumers.
-    """
+    "3. **Value Brands:** Offer accessible luxury with a focus on quality and brand heritage."
 )
-
-st.subheader("Monitor and Adjust Pricing:")
 st.write(
-    """
-    Regularly review the pricing strategies in relation to market dynamics and competitive analysis. Adjust pricing as needed to maintain optimal positioning and maximize profitability.
-    """
+    "4. **Overall:** Regularly review and adjust pricing to align with market dynamics and maintain optimal positioning."
 )
 
 
@@ -192,82 +159,56 @@ fig = px.bar(top_brands_sales_rank_df, x='Brand', y='Avg. Sales Rank (90 days av
              labels={'Avg. Sales Rank (90 days avg.)': 'Average Sales Rank (90 days avg.)'})
 st.plotly_chart(fig, use_container_width=True)
 
-# Title
-st.title("Sales Rank Insights")
+# Sales Rank Insights
+st.subheader("Sales Rank Insights")
 
 # High Sales Performance
-st.header("High Sales Performance")
-
-st.subheader("Top Performers:")
+st.write("### High Sales Performance")
 st.write(
-    """
-    - **Prada (€24,965.33)**
-    - **Valentino (€41,021.50)**
-    - **BVLGARI (€53,700.50)**
-
-    **Insight:** These brands have the lowest average sales ranks, indicating strong sales performance over the past 90 days. They are positioned as top performers in their respective markets, achieving high visibility and customer engagement.
-
-    **Actionable Strategy:** Continue to leverage successful strategies that contribute to strong sales. Consider expanding product lines or increasing marketing efforts to maintain or enhance market dominance.
-    """
+    "**Top Performers:** BVLGARI (€53,700.50), Valentino (€41,021.50), Prada (€24,965.33)"
+)
+st.write(
+    "**Insight:** These brands have the lowest average sales ranks, indicating they are top performers with strong sales and high customer engagement."
+)
+st.write(
+    "**Strategy:** Maintain and build on successful sales strategies. Explore expanding product lines and increasing marketing efforts to sustain or enhance market dominance."
 )
 
 # Mid-Range Sales Performance
-st.header("Mid-Range Sales Performance")
-
-st.subheader("Competitive Sales Ranks:")
+st.write("### Mid-Range Sales Performance")
 st.write(
-    """
-    - **Tiffany (€69,457.00)**
-    - **GIORGIO ARMANI (€75,474.50)**
-    - **Guerlain (€76,867.50)**
-
-    **Insight:** These brands have moderate average sales ranks, reflecting competitive performance. They are performing well but may face more competition compared to the top performers.
-
-    **Actionable Strategy:** Analyze competitive dynamics and identify opportunities to improve sales rank. Focus on differentiating your offerings and enhancing customer engagement to gain a competitive edge.
-    """
+    "**Brands:** Guerlain (€76,867.50), GIORGIO ARMANI (€75,474.50), Tiffany (€69,457.00)"
+)
+st.write(
+    "**Insight:** These brands have moderate sales ranks, showing competitive performance but facing more competition."
+)
+st.write(
+    "**Strategy:** Analyze the competitive landscape and identify ways to improve sales ranks. Enhance product differentiation and customer engagement to strengthen market position."
 )
 
 # Lower Sales Performance
-st.header("Lower Sales Performance")
-
-st.subheader("Areas for Improvement:")
+st.write("### Lower Sales Performance")
 st.write(
-    """
-    - **Tom Ford (€86,000.20)**
-    - **Versace (€87,774.50)**
-    - **PETZL (€97,427.50)**
-    - **Carolina Herrera (€107,276.00)**
-
-    **Insight:** These brands have higher average sales ranks, indicating weaker sales performance compared to others. They may be facing challenges in maintaining visibility or engaging customers effectively.
-
-    **Actionable Strategy:** Investigate factors contributing to lower sales ranks. Implement targeted marketing strategies, improve product offerings, or adjust pricing to enhance sales performance. Consider promotions or collaborations to boost visibility and attractiveness.
-    """
+    "**Brands:** Carolina Herrera (€107,276.00), PETZL (€97,427.50), Versace (€87,774.50), Tom Ford (€86,000.20)"
+)
+st.write(
+    "**Insight:** These brands have higher average sales ranks, suggesting weaker performance compared to others."
+)
+st.write(
+    "**Strategy:** Investigate the causes of lower sales. Implement targeted marketing, improve product offerings, adjust pricing, and consider promotions to boost visibility and sales."
 )
 
 # Summary of Recommendations
-st.header("Summary of Recommendations")
-
-st.subheader("Leverage High Performance:")
+st.write("### Summary of Recommendations")
 st.write(
-    """
-    For brands with top sales performance, continue optimizing successful strategies. Explore opportunities for expansion and increased market presence to capitalize on strong sales momentum.
-    """
+    "1. **Leverage High Performance:** For top-performing brands, continue optimizing successful strategies and explore expansion opportunities."
 )
-
-st.subheader("Enhance Competitive Positioning:")
 st.write(
-    """
-    For brands with mid-range performance, focus on analyzing competitive dynamics and improving strategies. Enhance product offerings and customer engagement to strengthen market position.
-    """
+    "2. **Enhance Competitive Positioning:** For mid-range brands, focus on improving strategies and customer engagement to gain a competitive edge."
 )
-
-st.subheader("Address Sales Challenges:")
 st.write(
-    """
-    For brands with lower sales performance, conduct a thorough review to identify areas for improvement. Implement targeted actions to boost sales and visibility, and regularly monitor performance to adjust strategies as needed.
-    """
+    "3. **Address Sales Challenges:** For lower-performing brands, identify areas for improvement and implement targeted actions to enhance sales and visibility. Regularly monitor and adjust strategies as needed."
 )
-
 
 # Statistical Summary
 st.markdown("<a id='statistical-summary'></a><h2>4. Statistical Summary</h2>", unsafe_allow_html=True)
@@ -309,48 +250,65 @@ st.dataframe(stats_df_formatted)
 st.markdown("<h2>Business Insights</h2>", unsafe_allow_html=True)
 
 # Section: Buy Box Price Drops
-st.header('1. Buy Box Price Drops')
-st.markdown("""
-**Short-Term Drops:** The median percentage drops for Buy Box prices are 0.00% for 1 day, 7 days, and 30 days, increasing to 3.00% for 90 days. The maximum recorded drop is 26.00%. This suggests that most products do not experience significant daily or weekly price fluctuations, but there can be notable changes over a longer period.
+# Sales Insights
+st.header("Sales Insights")
 
-**Implication:** Frequent and significant price drops over 90 days could indicate seasonal sales or inventory clearance strategies. Regular monitoring and adjusting pricing strategies accordingly can help in optimizing profitability and competitive positioning.
-""")
+# 1. Buy Box Price Drops
+st.subheader("1. Buy Box Price Drops")
+st.write(
+    "**Short-Term Drops:** Median percentage drops are 0.00% for 1 day, 7 days, and 30 days, rising to 3.00% for 90 days. Maximum recorded drop is 26.00%."
+)
+st.write(
+    "**Implication:** Minor daily or weekly fluctuations are typical, but substantial drops over longer periods may indicate seasonal sales or inventory clearances. Regular monitoring and price adjustments can help optimize profitability and stay competitive."
+)
 
-# Section: Referral Fee %
-st.header('2. Referral Fee %')
-st.markdown("""
-**Consistency:** The referral fee percentage remains stable with a median of 15.45% and a maximum of 15.46%. This consistency indicates that the referral fee is a predictable cost component.
+# 2. Referral Fee %
+st.subheader("2. Referral Fee %")
+st.write(
+    "**Consistency:** Median referral fee percentage is 15.45%, with a maximum of 15.46%."
+)
+st.write(
+    "**Implication:** The stable referral fee allows for predictable cost planning. Ensure product pricing accounts for this fee while staying competitive."
+)
 
-**Implication:** Businesses can reliably factor this cost into their pricing strategy. Ensure that the product pricing covers this fee while remaining competitive.
-""")
+# 3. Buy Box Prices
+st.subheader("3. Buy Box Prices")
+st.write(
+    "**Current Prices:** Median Buy Box price is €47.63, ranging up to €299.00."
+)
+st.write(
+    "**Historical Trends:** Prices have remained stable over 30 and 90 days, indicating steady pricing trends."
+)
+st.write(
+    "**Implication:** Compare current prices to historical averages to guide pricing adjustments. Competitive pricing enhances visibility and sales."
+)
 
-# Section: Buy Box Prices
-st.header('3. Buy Box Prices')
-st.markdown("""
-**Current Buy Box Price:** The median Buy Box price is €47.63 with a maximum of €299.00. This range shows variability in product pricing, reflecting different market segments or product categories.
-
-**Historical Trends:** Buy Box prices over 30 days and 90 days average are relatively stable compared to the current price, indicating steady pricing trends over these periods.
-
-**Implication:** Analyze how current pricing compares to historical averages to make informed pricing adjustments. Maintaining a competitive Buy Box price can enhance visibility and sales.
-""")
-
-# Section: Sales Rank
-st.header('4. Sales Rank')
-st.markdown("""
-**Sales Rank Trends:** The median sales rank is 85,315 for 30 days and 132,678 for 90 days, with significant variability. This indicates that while some products perform consistently, others may have fluctuating sales ranks.
-
-**Implication:** Focus on products with improving sales ranks for potential promotional strategies. For products with lower sales ranks, consider analyzing factors affecting their performance and adjust marketing strategies accordingly.
-""")
-
+# 4. Sales Rank
+st.subheader("4. Sales Rank")
+st.write(
+    "**Trends:** Median sales rank is 85,315 for 30 days and 132,678 for 90 days, with significant variability."
+)
+st.write(
+    "**Implication:** Target products with improving sales ranks for promotional strategies. For products with lower ranks, analyze performance factors and adjust marketing strategies."
+)
 
 # Summary of Recommendations
-st.header('Summary of Recommendations')
-st.markdown("""
-- **Price Management:** Regularly review and adjust pricing strategies based on observed price drops and historical trends to remain competitive.
-- **Cost Management:** Factor in the stable referral fee percentage when setting product prices to ensure coverage of costs and maintain profitability.
-- **Performance Monitoring:** Use sales rank data to identify high-performing products and those needing strategic adjustments. Implement targeted promotions and analyze performance metrics regularly.
-- **Logistics Optimization:** Adapt logistics and inventory management practices to accommodate the diverse dimensions and weights of items, ensuring efficient operations.
-""")
+st.subheader("Summary of Recommendations")
+st.write(
+    "1. **Price Management:** Regularly review and adjust pricing based on observed drops and historical trends."
+)
+st.write(
+    "2. **Cost Management:** Factor in the stable referral fee percentage to ensure costs are covered while maintaining competitiveness."
+)
+st.write(
+    "3. **Performance Monitoring:** Use sales rank data to identify and promote high-performing products. Adjust strategies for products with lower sales ranks."
+)
+st.write(
+    "4. **Logistics Optimization:** Adapt logistics and inventory management to efficiently handle diverse product dimensions and weights."
+)
+
+
+
 
 # Price Drop Analysis
 st.markdown("<a id='price-drop-analysis'></a><h2>5. Price Drop Analysis</h2>", unsafe_allow_html=True)
@@ -366,107 +324,73 @@ fig = px.bar(top_brands_price_drop_df, x='Brand', y='Average Price Drop (30 days
              labels={'Average Price Drop (30 days)': 'Average Price Drop (30 days) (%)'})
 st.plotly_chart(fig, use_container_width=True)
 
-# Title
-st.title("Average Price Drop Insights (30 Days)")
+# Average Price Drop Insights (30 Days)
+st.header("Average Price Drop Insights (30 Days)")
 
 # No Price Drop
-st.header("No Price Drop")
-st.subheader("Stable Pricing:")
+st.subheader("No Price Drop")
 st.write(
-    """
-    - **La Prairie**
-    - **GIORGIO ARMANI**
-    - **La Mer**
-    - **ON**
-
-    **Insight:** These brands show no average price drop over the past 30 days, indicating stable pricing strategies. This stability suggests strong market positioning and consistent brand value.
-    
-    **Actionable Strategy:** Continue maintaining stable prices to uphold brand perception and ensure customer trust. Monitor the market for any changes that might necessitate adjustments.
-    """
+    "**Brands:** La Prairie, GIORGIO ARMANI, La Mer, ON"
+)
+st.write(
+    "**Insight:** These brands have not experienced any average price drop in the past 30 days, reflecting stable pricing strategies and strong market positioning."
+)
+st.write(
+    "**Actionable Strategy:** Continue maintaining stable prices to uphold brand value and customer trust. Stay vigilant for any market changes that might require price adjustments."
 )
 
 # Low Price Drop
-st.header("Low Price Drop")
-st.subheader("Minimal Adjustments:")
+st.subheader("Low Price Drop")
 st.write(
-    """
-    - **Prada (0.33%)**
-    - **Valentino (0.75%)**
-    - **Tiffany (1.00%)**
-    - **Penhaligon's (1.00%)**
-    - **Loewe (1.00%)**
-
-    **Insight:** These brands have experienced minimal price drops, reflecting a cautious approach to pricing adjustments. They maintain relatively stable pricing while showing a minor decrease.
-
-    **Actionable Strategy:** For these brands, it’s advisable to closely monitor market trends and competitive pricing. Implement incremental adjustments if needed to stay competitive while preserving brand value.
-    """
+    "**Brands:** Prada (0.33%), Valentino (0.75%), Tiffany (1.00%), Penhaligon's (1.00%), Loewe (1.00%)"
+)
+st.write(
+    "**Insight:** These brands show minimal price drops, indicating cautious pricing adjustments and stable market positioning."
+)
+st.write(
+    "**Actionable Strategy:** Monitor market trends and competitive pricing closely. Implement incremental price adjustments if necessary to remain competitive while preserving brand value."
 )
 
 # Moderate Price Drop
-st.header("Moderate Price Drop")
-st.subheader("Adjusting to Market Conditions:")
+st.subheader("Moderate Price Drop")
 st.write(
-    """
-    - **Dior (1.33%)**
-    - **Chanel (1.90%)**
-    - **PETZL (2.00%)**
-    - **ZWILLING (2.00%)**
-    - **Helena Rubinstein (2.00%)**
-    - **Guerlain (2.00%)**
-    - **Biotherm (2.00%)**
-
-    **Insight:** Brands in this category have seen moderate price drops, suggesting responsiveness to market pressures or inventory management strategies. These adjustments help remain competitive in a changing market.
-
-    **Actionable Strategy:** Consider analyzing the reasons behind these moderate price drops. Adjust pricing strategies to balance competitiveness with profitability and address any underlying market dynamics.
-    """
+    "**Brands:** Dior (1.33%), Chanel (1.90%), PETZL (2.00%), ZWILLING (2.00%), Helena Rubinstein (2.00%), Guerlain (2.00%), Biotherm (2.00%)"
+)
+st.write(
+    "**Insight:** These brands have experienced moderate price drops, possibly in response to market pressures or inventory management."
+)
+st.write(
+    "**Actionable Strategy:** Investigate the reasons for these moderate drops and adjust pricing strategies to balance competitiveness with profitability. Address any market dynamics affecting pricing."
 )
 
 # Significant Price Drop
-st.header("Significant Price Drop")
-st.subheader("Strategic Adjustments Needed:")
+st.subheader("Significant Price Drop")
 st.write(
-    """
-    - **Carolina Herrera (3.00%)**
-    - **Tom Ford (5.20%)**
-    - **Versace (7.50%)**
-    - **BVLGARI (8.50%)**
-
-    **Insight:** These brands exhibit significant price drops, which may indicate aggressive pricing strategies, inventory clearance, or response to competitive pressure.
-
-    **Actionable Strategy:** For these brands, review pricing strategies to understand the causes of substantial drops. Consider evaluating inventory levels, market competition, and consumer demand to adjust pricing strategies effectively.
-    """
+    "**Brands:** Carolina Herrera (3.00%), Tom Ford (5.20%), Versace (7.50%), BVLGARI (8.50%)"
+)
+st.write(
+    "**Insight:** Significant price drops may indicate aggressive pricing strategies, inventory clearance, or competitive responses."
+)
+st.write(
+    "**Actionable Strategy:** Review pricing strategies to understand the causes of substantial drops. Evaluate inventory levels, market competition, and consumer demand to optimize pricing effectively."
 )
 
 # Summary of Recommendations
-st.header("Summary of Recommendations")
-
-st.subheader("Maintain Stability:")
+st.subheader("Summary of Recommendations")
 st.write(
-    """
-    For brands with no price drop, keep monitoring the market to ensure prices remain aligned with market conditions and brand positioning.
-    """
+    "1. **Maintain Stability:** For brands with no price drop, continue to monitor the market to ensure prices align with market conditions and brand positioning."
+)
+st.write(
+    "2. **Monitor and Adjust Incrementally:** For brands with low price drops, make small adjustments as needed while focusing on maintaining brand value and competitive positioning."
+)
+st.write(
+    "3. **Analyze and Adapt Moderately:** For brands with moderate price drops, analyze market trends and adjust pricing strategies to ensure competitiveness while managing profitability."
+)
+st.write(
+    "4. **Strategic Review for Significant Drops:** For brands with significant price drops, conduct a thorough review of pricing strategies and market dynamics to address underlying issues and optimize pricing."
 )
 
-st.subheader("Monitor and Adjust Incrementally:")
-st.write(
-    """
-    For brands with low price drops, implement small adjustments as necessary while focusing on maintaining brand value and competitive positioning.
-    """
-)
 
-st.subheader("Analyze and Adapt Moderately:")
-st.write(
-    """
-    For brands with moderate price drops, analyze market trends and adjust pricing strategies to ensure competitiveness while managing profitability.
-    """
-)
-
-st.subheader("Strategic Review for Significant Drops:")
-st.write(
-    """
-    For brands with significant price drops, conduct a thorough review of pricing strategies and market dynamics to address underlying issues and optimize pricing effectively.
-    """
-)
 
 # Category Insights
 st.markdown("<a id='category-insights'></a><h2>6. Category Insights</h2>", unsafe_allow_html=True)
@@ -527,60 +451,157 @@ fig.update_layout(
 # Display the plot
 st.plotly_chart(fig, use_container_width=True)
 
+# High Sales Volume Categories
+st.header("Sales Insights by Category")
 
-# Define the business insights
-insights = {
-    "High Sales Volume Categories": {
-        "Casa e Cucina (€453,215.00)": {
-            "Insight": "This category has the highest average sales rank, indicating it generates the most significant sales volume among the categories. This suggests a strong market demand for home and kitchen products.",
-            "Actionable Strategy": "Focus marketing efforts and inventory investment in this category. Explore opportunities to introduce new products or premium options to leverage the high sales volume."
-        },
-        "Giochi e Giocattoli (€422,243.00)": {
-            "Insight": "Toys and games also show a high average sales rank, reflecting robust consumer interest. The high sales rank suggests a significant portion of revenue comes from this category.",
-            "Actionable Strategy": "Consider seasonal promotions and targeted marketing campaigns to capitalize on trends and maximize revenue from this category. Evaluate popular trends in toys and games to stay competitive."
-        }
-    },
-    "Moderate Sales Volume Categories": {
-        "Moda (€105,114.50)": {
-            "Insight": "The fashion category shows a moderate average sales rank, indicating a steady but not exceptional sales volume compared to the top categories.",
-            "Actionable Strategy": "Develop strategies to boost sales, such as collaborations with influencers or limited-time offers. Enhance product selection and focus on trending fashion items."
-        },
-        "Bellezza (€90,656.90)": {
-            "Insight": "Beauty products have a solid average sales rank, indicating a healthy demand. This category is important but not as dominant as the top two categories.",
-            "Actionable Strategy": "Increase marketing efforts and consider expanding the product line to include new beauty trends. Focus on customer loyalty programs and product reviews to drive sales."
-        },
-        "Salute e Cura della Persona (€88,738.00)": {
-            "Insight": "Health and personal care products show a good sales rank, reflecting consumer interest in health-related products.",
-            "Actionable Strategy": "Strengthen partnerships with health influencers and focus on product education. Consider bundling products or creating special offers to attract more customers."
-        },
-        "Sport e Tempo Libero (€64,951.67)": {
-            "Insight": "Sports and leisure products have a moderate sales rank, suggesting steady but lower sales compared to the top categories.",
-            "Actionable Strategy": "Leverage seasonal trends and promote products around major sports events or recreational activities. Enhance product visibility and consider promotions to boost sales."
-        }
-    },
-    "Low Sales Volume Categories": {
-        "Alimentari e Cura della Casa (€0.00)": {
-            "Insight": "This category shows zero sales, which could indicate a lack of product presence or low consumer demand.",
-            "Actionable Strategy": "Investigate the reasons for the lack of sales. Consider introducing new products or enhancing the marketing strategy for this category. Evaluate consumer demand and adjust product offerings accordingly."
-        },
-        "Cancelleria e Prodotti per Ufficio (€0.00)": {
-            "Insight": "Similar to the food and home care category, this category also has zero sales, indicating potential issues with market fit or product availability.",
-            "Actionable Strategy": "Assess the current product lineup and market needs. Consider exploring new product options or improving the visibility and accessibility of office supplies."
-        }
-    }
-}
+st.subheader("High Sales Volume Categories")
 
-# Create a Streamlit app
-st.title('Business Insights Based on Sales Performance')
+# Casa e Cucina
+st.write(
+    "**Casa e Cucina (€453,215.00)**"
+)
+st.write(
+    "**Insight:** This category exhibits the highest average sales volume, reflecting significant consumer demand and market success in home and kitchen products. The substantial revenue indicates that products in this category are performing exceptionally well."
+)
+st.write(
+    "**Actionable Strategy:** To capitalize on this strong performance, focus on amplifying marketing efforts and increasing inventory in this category. Explore opportunities to introduce new or premium products to sustain and further enhance sales."
+)
 
-# Display insights
-for category, details in insights.items():
-    st.subheader(category)
-    for item, info in details.items():
-        st.write(f"**{item}**")
-        st.write(f"**Insight:** {info['Insight']}")
-        st.write(f"**Actionable Strategy:** {info['Actionable Strategy']}")
-        st.write("")  # Add a blank line for readability
+# Giochi e Giocattoli
+st.write(
+    "**Giochi e Giocattoli (€422,243.00)**"
+)
+st.write(
+    "**Insight:** Toys and games also show a high sales volume, indicating robust consumer interest and a substantial revenue contribution. The strong performance suggests that this category is a major revenue driver."
+)
+st.write(
+    "**Actionable Strategy:** Leverage seasonal trends with targeted promotions and marketing campaigns. Stay updated with the latest trends in toys and games to maintain a competitive edge and maximize revenue."
+)
+
+st.subheader("Moderate Sales Volume Categories")
+
+# Moda
+st.write(
+    "**Moda (€105,114.50)**"
+)
+st.write(
+    "**Insight:** Fashion products show a moderate sales volume, indicating steady performance but not as strong as the top categories. This suggests consistent consumer interest but with potential for growth."
+)
+st.write(
+    "**Actionable Strategy:** Enhance sales through collaborations with fashion influencers and by offering limited-time promotions. Focus on popular and trending fashion items to boost market presence."
+)
+
+# Bellezza
+st.write(
+    "**Bellezza (€90,656.90)**"
+)
+st.write(
+    "**Insight:** Beauty products have a solid sales volume, indicating healthy demand, though not as high as the leading categories. This reflects a steady but not dominant position in the market."
+)
+st.write(
+    "**Actionable Strategy:** Increase marketing efforts and expand the product line to include new trends in beauty. Develop customer loyalty programs and encourage product reviews to drive additional sales."
+)
+
+# Salute e Cura della Persona
+st.write(
+    "**Salute e Cura della Persona (€88,738.00)**"
+)
+st.write(
+    "**Insight:** Health and personal care products have a good sales volume, showing strong consumer interest in health-related items. This suggests that the category is performing well but could benefit from further strategic focus."
+)
+st.write(
+    "**Actionable Strategy:** Strengthen partnerships with health influencers and focus on educating consumers about the benefits of the products. Consider bundling items or creating special offers to attract more customers."
+)
+
+# Sport e Tempo Libero
+st.write(
+    "**Sport e Tempo Libero (€64,951.67)**"
+)
+st.write(
+    "**Insight:** Sports and leisure products demonstrate a moderate sales volume, indicating steady performance but lower compared to top categories. This suggests a stable market presence with room for growth."
+)
+st.write(
+    "**Actionable Strategy:** Capitalize on seasonal trends and major sports events to promote products. Enhance visibility through targeted promotions to boost sales in this category."
+)
+
+st.subheader("Low Sales Volume Categories")
+
+# Alimentari e Cura della Casa
+st.write(
+    "**Alimentari e Cura della Casa (€0.00)**"
+)
+st.write(
+    "**Insight:** This category shows zero sales, which could indicate a lack of market presence or insufficient consumer interest. The absence of sales suggests a significant issue that needs addressing."
+)
+st.write(
+    "**Actionable Strategy:** Investigate the underlying reasons for zero sales. Consider introducing new products or revising the marketing strategy. Analyze consumer demand and adjust the product offerings to better meet market needs."
+)
+
+# Cancelleria e Prodotti per Ufficio
+st.write(
+    "**Cancelleria e Prodotti per Ufficio (€0.00)**"
+)
+st.write(
+    "**Insight:** Similar to the food and home care category, this category also reports zero sales, potentially due to market fit issues or inadequate product availability."
+)
+st.write(
+    "**Actionable Strategy:** Review the current product lineup and assess market needs. Explore new product options or improve the visibility and accessibility of office supplies to increase sales."
+)
+
+
+# # Define the business insights
+# insights = {
+#     "High Sales Volume Categories": {
+#         "Casa e Cucina (€453,215.00)": {
+#             "Insight": "This category has the highest average sales rank, indicating it generates the most significant sales volume among the categories. This suggests a strong market demand for home and kitchen products.",
+#             "Actionable Strategy": "Focus marketing efforts and inventory investment in this category. Explore opportunities to introduce new products or premium options to leverage the high sales volume."
+#         },
+#         "Giochi e Giocattoli (€422,243.00)": {
+#             "Insight": "Toys and games also show a high average sales rank, reflecting robust consumer interest. The high sales rank suggests a significant portion of revenue comes from this category.",
+#             "Actionable Strategy": "Consider seasonal promotions and targeted marketing campaigns to capitalize on trends and maximize revenue from this category. Evaluate popular trends in toys and games to stay competitive."
+#         }
+#     },
+#     "Moderate Sales Volume Categories": {
+#         "Moda (€105,114.50)": {
+#             "Insight": "The fashion category shows a moderate average sales rank, indicating a steady but not exceptional sales volume compared to the top categories.",
+#             "Actionable Strategy": "Develop strategies to boost sales, such as collaborations with influencers or limited-time offers. Enhance product selection and focus on trending fashion items."
+#         },
+#         "Bellezza (€90,656.90)": {
+#             "Insight": "Beauty products have a solid average sales rank, indicating a healthy demand. This category is important but not as dominant as the top two categories.",
+#             "Actionable Strategy": "Increase marketing efforts and consider expanding the product line to include new beauty trends. Focus on customer loyalty programs and product reviews to drive sales."
+#         },
+#         "Salute e Cura della Persona (€88,738.00)": {
+#             "Insight": "Health and personal care products show a good sales rank, reflecting consumer interest in health-related products.",
+#             "Actionable Strategy": "Strengthen partnerships with health influencers and focus on product education. Consider bundling products or creating special offers to attract more customers."
+#         },
+#         "Sport e Tempo Libero (€64,951.67)": {
+#             "Insight": "Sports and leisure products have a moderate sales rank, suggesting steady but lower sales compared to the top categories.",
+#             "Actionable Strategy": "Leverage seasonal trends and promote products around major sports events or recreational activities. Enhance product visibility and consider promotions to boost sales."
+#         }
+#     },
+#     "Low Sales Volume Categories": {
+#         "Alimentari e Cura della Casa (€0.00)": {
+#             "Insight": "This category shows zero sales, which could indicate a lack of product presence or low consumer demand.",
+#             "Actionable Strategy": "Investigate the reasons for the lack of sales. Consider introducing new products or enhancing the marketing strategy for this category. Evaluate consumer demand and adjust product offerings accordingly."
+#         },
+#         "Cancelleria e Prodotti per Ufficio (€0.00)": {
+#             "Insight": "Similar to the food and home care category, this category also has zero sales, indicating potential issues with market fit or product availability.",
+#             "Actionable Strategy": "Assess the current product lineup and market needs. Consider exploring new product options or improving the visibility and accessibility of office supplies."
+#         }
+#     }
+# }
+
+# # Create a Streamlit app
+# st.title('Business Insights Based on Sales Performance')
+
+# # Display insights
+# for category, details in insights.items():
+#     st.subheader(category)
+#     for item, info in details.items():
+#         st.write(f"**{item}**")
+#         st.write(f"**Insight:** {info['Insight']}")
+#         st.write(f"**Actionable Strategy:** {info['Actionable Strategy']}")
+#         st.write("")  # Add a blank line for readability
 
 
 # Customer Reviews
